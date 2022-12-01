@@ -7,7 +7,6 @@ const elfCalories = data.trim().split('\n\n');
 const calorieRank = [];
 elfCalories.forEach(elf => {
   const calories = elf.split('\n').map(Number);
-  //const calories = calorieStrings.map(num => Number.parseInt(num));
   calorieRank.push(calories.reduce((sum, value) => sum + value));
 });
 

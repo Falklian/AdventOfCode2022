@@ -5,7 +5,7 @@ const data = readFileSync('day1.txt', 'utf8');
 const elfCalories = data.trim().split('\n\n');
 
 const calorieRank = [];
-elfCalories.forEach(elf => {
+elfCalories.forEach((elf) => {
   const calories = elf.split('\n').map(Number);
   calorieRank.push(calories.reduce((sum, value) => sum + value));
 });

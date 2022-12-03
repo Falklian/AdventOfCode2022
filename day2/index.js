@@ -12,36 +12,47 @@ const winScore = 6;
 const games = data.trim().split('\n');
 
 let totalScore = 0;
-games.forEach(game => {
+games.forEach((game) => {
   const actions = game.split(' ');
 
-  switch(actions[0]) {
+  switch (actions[0]) {
     case 'A': // rock
-      if (actions[1] === 'X') { // draw
+      if (actions[1] === 'X') {
+        // draw
         totalScore += drawScore + rockScore;
-      } else if (actions[1] === 'Y') { // win
+      } else if (actions[1] === 'Y') {
+        // win
         totalScore += winScore + paperScore;
-      } else { // lose
+      } else {
+        // lose
         totalScore += loseScore + scissorsScore;
       }
       break;
     case 'B': // paper
-      if (actions[1] === 'X') { // lose
+      if (actions[1] === 'X') {
+        // lose
         totalScore += loseScore + rockScore;
-      } else if (actions[1] === 'Y') { // draw
+      } else if (actions[1] === 'Y') {
+        // draw
         totalScore += drawScore + paperScore;
-      } else { // win
+      } else {
+        // win
         totalScore += winScore + scissorsScore;
       }
       break;
     case 'C': // scissors
-      if (actions[1] === 'X') { // win
+      if (actions[1] === 'X') {
+        // win
         totalScore += winScore + rockScore;
-      } else if (actions[1] === 'Y') { // lose
+      } else if (actions[1] === 'Y') {
+        // lose
         totalScore += loseScore + paperScore;
-      } else { // draw
+      } else {
+        // draw
         totalScore += drawScore + scissorsScore;
       }
+      break;
+    default:
       break;
   }
 });
@@ -49,38 +60,49 @@ games.forEach(game => {
 console.log(`Total score (part 1): ${totalScore}`);
 
 totalScore = 0;
-games.forEach(game => {
+games.forEach((game) => {
   const actions = game.split(' ');
 
-  switch(actions[0]) {
+  switch (actions[0]) {
     case 'A': // rock
-      if (actions[1] === 'X') { // lose
+      if (actions[1] === 'X') {
+        // lose
         totalScore += loseScore + scissorsScore;
-      } else if (actions[1] === 'Y') { // draw
+      } else if (actions[1] === 'Y') {
+        // draw
         totalScore += drawScore + rockScore;
-      } else { // win
+      } else {
+        // win
         totalScore += winScore + paperScore;
       }
       break;
     case 'B': // paper
-      if (actions[1] === 'X') { // lose
+      if (actions[1] === 'X') {
+        // lose
         totalScore += loseScore + rockScore;
-      } else if (actions[1] === 'Y') { // draw
+      } else if (actions[1] === 'Y') {
+        // draw
         totalScore += drawScore + paperScore;
-      } else { // win
+      } else {
+        // win
         totalScore += winScore + scissorsScore;
       }
       break;
     case 'C': // scissors
-      if (actions[1] === 'X') { // lose
+      if (actions[1] === 'X') {
+        // lose
         totalScore += loseScore + paperScore;
-      } else if (actions[1] === 'Y') { // draw
+      } else if (actions[1] === 'Y') {
+        // draw
         totalScore += drawScore + scissorsScore;
-      } else { // win
+      } else {
+        // win
         totalScore += winScore + rockScore;
       }
+      break;
+    default:
       break;
   }
 });
 
-console.log(`Total score (part 2): ${totalScore}`)
+console.log(`Total score (part 2): ${totalScore}`);

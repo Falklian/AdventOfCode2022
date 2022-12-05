@@ -9,6 +9,6 @@ insert_final_newline = true
 tab_width = 2
 trim_trailing_whitespace = true
 
-[*.md]
+[{*.md,day5.txt}]
 insert_final_newline = false
 trim_trailing_whitespace = false
